@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 210 40% 98%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 187 100% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 174 62% 47%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 210 40% 80%;
+
+    --accent: 14 100% 63%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 187 100% 42%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-black text-foreground;
+  }
+}
+
+/* Custom styles for the assessment platform */
+.progress-bar {
+  @apply h-2 rounded-full bg-muted overflow-hidden;
+}
+
+.progress-bar-fill {
+  @apply h-full bg-primary rounded-full transition-all duration-300 ease-in-out;
+}
+
+.category-card-red {
+  @apply bg-red-950/30 border-red-800;
+}
+
+.category-card-yellow {
+  @apply bg-amber-950/30 border-amber-800;
+}
+
+.category-card-green {
+  @apply bg-emerald-950/30 border-emerald-800;
+}
+
+.score-red {
+  @apply text-red-500;
+}
+
+.score-yellow {
+  @apply text-accent;
+}
+
+.score-green {
+  @apply text-secondary;
+}
+
+.resource-card {
+  @apply border border-border bg-card hover:bg-card/80 transition-colors;
+}
+
+.resource-card-header {
+  @apply bg-primary/20 p-4;
+}
+
+.resource-type-badge {
+  @apply inline-block px-2 py-1 rounded-full bg-secondary text-secondary-foreground text-xs font-medium;
+}
+
+/* New styles for the redesigned results page */
+.score-container {
+  @apply relative flex flex-col items-center justify-center;
+}
+
+.score-badge {
+  @apply absolute -top-2 -right-2 bg-primary/30 text-primary text-xs px-2 py-1 rounded-full;
+}
+
+.score-value {
+  @apply text-7xl font-bold;
+}
+
+.score-max {
+  @apply text-muted-foreground text-3xl;
+}
+
+.chart-container {
+  @apply border border-border rounded-lg bg-card p-4;
+}
+
+.improvement-areas {
+  @apply grid gap-3 md:grid-cols-2;
+}
+
+/* Button hover effects */
+.btn-primary-hover {
+  @apply transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-md hover:border-primary/30;
+}
+
+/* Gradient backgrounds */
+.bg-trust-gradient {
+  @apply bg-gradient-to-r from-primary to-primary-600;
+}
+
+.bg-growth-gradient {
+  @apply bg-gradient-to-r from-secondary to-teal-500;
+}
+
+.bg-premium-gradient {
+  @apply bg-gradient-to-r from-purple-500 to-indigo-500;
+}
+
+.bg-action-gradient {
+  @apply bg-gradient-to-r from-accent to-orange-500;
+}
+
+/* Mobile responsive utilities */
+@media (max-width: 640px) {
+  .card-hover {
+    @apply transition-all duration-200;
+  }
+
+  .score-value {
+    @apply text-5xl;
+  }
+
+  .score-max {
+    @apply text-xl;
+  }
+
+  .improvement-areas {
+    @apply grid gap-2;
+  }
+
+  .resource-card-header {
+    @apply p-3;
+  }
+}
+
+/* Ensure proper spacing on small screens */
+.mobile-p {
+  @apply p-2 sm:p-4;
+}
+
+.mobile-m {
+  @apply m-2 sm:m-4;
+}
+
+.mobile-text {
+  @apply text-sm sm:text-base;
+}
+
+.mobile-heading {
+  @apply text-lg sm:text-xl md:text-2xl;
+}
